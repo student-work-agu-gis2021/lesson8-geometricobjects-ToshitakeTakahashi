@@ -32,10 +32,10 @@ print(point1.geom_type)
 def create_line_geom(points):
   return LineString(points)
 # Demonstrate the usage of your function; For example, create a line object with two points: `Point(45.2, 22.34)` & `Point(100.22, -3.20)` and store the result in a variable called `line1`:
+
+# YOUR CODE HERE 3 to define two points and store the result in line1
 demopoint=[(45.2,22.34),(100.22,-3.2)]
 line1 =LineString(demopoint)
-# YOUR CODE HERE 3 to define two points and store the result in line1
-
 
 # CODE FOR TESTING YOUR SOLUTION
 print(line1)
