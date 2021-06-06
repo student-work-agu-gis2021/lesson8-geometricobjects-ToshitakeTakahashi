@@ -171,7 +171,9 @@ except Exception as e:
 
 
 #  YOUR CODE HERE 9 to define get_length()
-
+def get_length(geom):
+  assert type(geom)==LineString or type(geom)==Polygon,"'geom' should be either LineString or Polygon!"
+  return geom.length
 # Test and demonstrate the usage of the function:
 
 get_length(poly1)
