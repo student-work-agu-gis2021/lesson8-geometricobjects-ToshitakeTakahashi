@@ -75,6 +75,7 @@ def create_poly_geom(coords):
   assert len(coords)>=3,"Polygon objectrequires at least three Points!"
   for i in coords:
     assert type(i) is tuple,"All list values should be coordinate tuples!"
+   
   return Polygon(coords)
 
 # Demonstrate the usage of the function. For example, create a Polygon with three points: `(45.2, 22.34)`, `(100.22, -3.20)` & `(70.0, 10.20)`.
@@ -114,13 +115,14 @@ except Exception as e:
 
 #  YOUR CODE HERE 6 to define get_centroid()
 def get_centroid(geom):
-  assert type(geom)=="shapely","Input should be a Shapely geometry!"
-  return geom.centroid
+ assert type(geom)==Point or type(geom)==LineString or type(geom)==Polygon,"Input should be a Shapely!"
+ return geom.centroid
 # Test and demonstrate the usage of the function. You can, for example, create shapely objects using the functions you created in problem 1 and print out information about their centroids:
 # 
 
 #  YOUR CODE HERE 7 to define some objects
-print(get_centroid(poly1))
+poly1=create_poly_geom([(45.2,22.34),(100.22,-3.20),(70.0,10.20)])
+
 
 # CODE FOR TESTING YOUR SOLUTION
 centroid = get_centroid(poly1)
@@ -142,7 +144,9 @@ except Exception as e:
 #    - Inside the function, you should first check with `assert` -functionality that the input is a Shapely Polygon geometry (see [lesson 6](https://geo-python.github.io/site/lessons/L6/interpreting-errors.html#assertions) and [hints](https://automating-gis-processes.github.io/site/develop/lessons/L1/exercise-1.html#hints)). If something else than a list is passed for the function, you should return an Error message: `"Input should be a Shapely Polygon -object!"`
 
 # YOUR CODE HERE 8 to define get_area()
-
+def get_area(polygon):
+  #assert type(polygon)=="Shapely Polygon geometry","Input should be a Shapely Polygon -object!"
+  return polygon.area
 # Test and demonstrate the usage of the function:
 get_area(poly1)
 
