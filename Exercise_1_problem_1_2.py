@@ -145,7 +145,7 @@ except Exception as e:
 
 # YOUR CODE HERE 8 to define get_area()
 def get_area(polygon):
-  #assert type(polygon)=="Shapely Polygon geometry","Input should be a Shapely Polygon -object!"
+  assert type(polygon)==Polygon,"Input should be a Shapely Polygon -object!"
   return polygon.area
 # Test and demonstrate the usage of the function:
 get_area(poly1)
