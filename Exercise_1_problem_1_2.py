@@ -30,6 +30,19 @@ print(point1.geom_type)
 
 # YOUR CODE HERE 2 to define create_line_geom()
 def create_line_geom(points):
+  """
+  Function for judeging and taking a list ofShapely Point 
+
+  Parameters
+  ----------
+  points:numerical 
+         the number of the point
+
+  returns 
+  ----------
+  LineString
+     class number
+  """
   assert type(points)=="list","Input should be a list!"
   assert len(points)>=2,"LineString object requires at leasttwo Points!"
   return LineString(points)
@@ -70,6 +83,18 @@ except Exception as e:
 
 # YOUR CODE HERE 4 to define create_poly_geom()
 def create_poly_geom(coords):
+  """
+  Function creating Polygon
+
+  Parameters
+  ---------
+  coords:numerical
+
+
+  returns
+  ---------
+  Polygon
+  """
   assert type(coords) is list,"Input sholud be a list!"
   
   assert len(coords)>=3,"Polygon objectrequires at least three Points!"
@@ -115,8 +140,18 @@ except Exception as e:
 
 #  YOUR CODE HERE 6 to define get_centroid()
 def get_centroid(geom):
- assert type(geom)==Point or type(geom)==LineString or type(geom)==Polygon,"Input should be a Shapely!"
- return geom.centroid
+  """
+  Function finding centroid
+  Parameter
+  -----------
+  geom:Shapely's geometric -object
+
+  return
+  ---------
+  centroid:numerical
+  """
+  assert type(geom)==Point or type(geom)==LineString or type(geom)==Polygon,"Input should be a Shapely!"
+  return geom.centroid
 # Test and demonstrate the usage of the function. You can, for example, create shapely objects using the functions you created in problem 1 and print out information about their centroids:
 # 
 
@@ -145,6 +180,16 @@ except Exception as e:
 
 # YOUR CODE HERE 8 to define get_area()
 def get_area(polygon):
+  """"
+  Function seeking area of polygon
+  Parameter
+  -------
+  polygon:polygon
+
+  return
+  ------
+  area:numerical ValueError
+  """
   assert type(polygon)==Polygon,"Input should be a Shapely Polygon -object!"
   return polygon.area
 # Test and demonstrate the usage of the function:
@@ -172,6 +217,16 @@ except Exception as e:
 
 #  YOUR CODE HERE 9 to define get_length()
 def get_length(geom):
+  """"
+  function getting get_length
+  Parameters
+  ------
+  geom:Shapely LineString or Polygon
+
+  return
+  -------
+  length of geom:numerical velue
+  """
   assert type(geom)==LineString or type(geom)==Polygon,"'geom' should be either LineString or Polygon!"
   return geom.length
 # Test and demonstrate the usage of the function:
