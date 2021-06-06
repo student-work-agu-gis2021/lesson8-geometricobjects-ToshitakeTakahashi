@@ -71,7 +71,7 @@ print('dest_points length:', len(dest_points))
 # YOUR CODE HERE 4 to append points in orig_points and dest_points
 from shapely.geometry import Point
 for i in range(len(data)):
-  orig_point=Point(data['from_x'][i],data[['from_y'][i]])
+  orig_point=Point(data['from_x'][i],data['from_y'][i])
   dest_point=Point(data['to_x'][i],data['to_y'][i])
   orig_points.append(orig_point)
   dest_points.append(dest_point)
@@ -120,7 +120,9 @@ print('lines length:', len(lines))
 # YOUR CODE HERE 6 to append LineString to lines
 #raise NotImplementedError()
 from shapely.geometry import LineString
-
+for i in range(len(data)):
+  line=[orig_points[i],dest_points[i]]
+  lines.append(LineString(line))
 # CODE FOR TESTING YOUR SOLUTION
 
 #Test that the list has correct number of LineStrings
